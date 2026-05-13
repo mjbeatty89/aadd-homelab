@@ -1,0 +1,35 @@
+# macOS / local noise
+.DS_Store
+**/.DS_Store
+
+# Obsidian local state and plugin payloads
+.obsidian/workspace*.json
+.obsidian/plugins/
+.obsidian/icons/
+
+# Smart Connections / embedding cache
+.smart-env/
+
+# Local/private scratch
+Logs/
+Sources/Raw/
+
+# Personal / large non-homelab artifacts currently in this vault
+images/*
+!images/Home.md
+Projects/Proposal/
+Projects/2026 Taxes.md
+
+# Secrets and env files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.mobileconfig
+*credential*
+*credentials*
+*secret*
+*token*
+*password*
+
