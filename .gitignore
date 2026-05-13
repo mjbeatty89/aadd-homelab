@@ -36,3 +36,13 @@ Projects/2026 Taxes.md
 *secret*
 *token*
 *password*
+
+
+# Gas Town (added by gt)
+.runtime/
+.claude/
+.logs/
+__pycache__/
+state.json
+CLAUDE.md
+CLAUDE.local.md
