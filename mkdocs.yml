@@ -1,0 +1,72 @@
+site_name: AADD Homelab Second Brain
+site_description: Git-backed homelab second brain and LLM wiki for em0lab / AADD.
+site_url: https://mjbeatty89.github.io/aadd-homelab/
+repo_url: https://github.com/mjbeatty89/aadd-homelab
+repo_name: mjbeatty89/aadd-homelab
+
+docs_dir: .site-src
+site_dir: .site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - roamlinks
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: Home.md
+  - Agent Context:
+      - AGENTS.md
+      - CLAUDE.md
+      - AI Operating Guide: Resources/AI Operating Guide.md
+  - Resources:
+      - Network Map: Resources/Network Map.md
+      - Host Inventory: Resources/Host Inventory.md
+      - Service Catalog: Resources/Service Catalog.md
+      - Runbooks: Resources/Runbooks.md
+      - Tailscale Snapshot: Resources/Tailscale Snapshot.md
+      - Dev Workspace Map: Resources/Dev Workspace Map.md
+      - Open Questions: Resources/Open Questions.md
+      - Glossary: Resources/Glossary.md
+      - Caddy Bug Fix: Resources/Caddy Bug Fix.md
+      - OpenHASP: Resources/OpenHASP.md
+  - Areas:
+      - Homelab: Areas/Homelab.md
+      - Home Assistant: Areas/Home Assistant.md
+      - Rental Suite: Areas/Rental Suite.md
+  - Projects:
+      - LLM Wiki Second Brain: Projects/LLM Wiki Second Brain.md
+      - Claude Orchestration: Projects/Claude Orchestration.md
+      - Mac Mini Migration: Projects/Mac Mini M4 - External SSD Migration.md
+      - Magic Mirror: Projects/Magic Mirror.md
+      - Matrix LED Rectangular: Projects/Matrix LED - Rectangular Display.md
+      - Matrix LED Spotify: Projects/Matrix LED - Spotify Viewer.md
+      - Resume and Website: Projects/Resume and Website.md
+  - Schemas:
+      - LLM Wiki Schema: Schemas/LLM Wiki Schema.md
+      - Relationship Ontology: Schemas/Relationship Ontology.md
+  - Templates:
+      - Homelab System Note: Templates/Homelab System Note.md
+      - Wiki Note: Templates/Wiki Note.md
+      - ADR: Templates/ADR.md
+      - Incident: Templates/Incident.md
+      - Source Capture: Templates/Source Capture.md
+  - Tasks: TASKS.md

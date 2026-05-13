@@ -13,6 +13,8 @@ IGNORED_DIRS = {
     ".git",
     ".obsidian",
     ".smart-env",
+    ".site",
+    ".site-src",
     "Logs",
     "Sources/Raw",
     "images",

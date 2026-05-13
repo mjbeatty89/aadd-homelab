@@ -9,6 +9,10 @@
 
 # Smart Connections / embedding cache
 .smart-env/
+.site/
+.site-src/
+.venv/
+.tmp/
 
 # Local/private scratch
 Logs/
@@ -32,4 +36,3 @@ Projects/2026 Taxes.md
 *secret*
 *token*
 *password*
-
