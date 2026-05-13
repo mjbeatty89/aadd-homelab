@@ -1,0 +1,21 @@
+name: Wiki Health
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  wiki-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run wiki health check
+        run: python3 scripts/wiki_health.py
+
