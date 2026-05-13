@@ -8,6 +8,7 @@ Start here:
 - [AGENTS.md](AGENTS.md)
 - [CLAUDE.md](CLAUDE.md)
 - [Resources/AI Operating Guide.md](Resources/AI%20Operating%20Guide.md)
+- [Resources/Repo Scope.md](Resources/Repo%20Scope.md)
 - [Projects/LLM Wiki Second Brain.md](Projects/LLM%20Wiki%20Second%20Brain.md)
 
 ## Purpose
@@ -15,7 +16,13 @@ Start here:
 - Keep durable homelab knowledge in local-first markdown.
 - Let AI agents read and maintain the wiki using schemas and templates.
 - Support GitOps/IaC workflows for service additions and infrastructure updates.
-- Publish a private web wiki later without making local Obsidian the bottleneck.
+- Publish a web wiki without making local Obsidian the bottleneck.
+
+## Repo Boundary
+
+This repo is the knowledge base for `aadd-homelab`, not the default home for unrelated application code.
+
+Implementation-heavy projects should live in their own repos and link back here through project notes, ADRs, runbooks, and source-of-truth references.
 
 ## Agent Rules
 
@@ -33,3 +40,6 @@ python3 scripts/wiki_health.py
 
 The first version checks for basic frontmatter coverage on durable wiki files and broken wikilinks.
 
+## Published Wiki
+
+GitHub Pages builds from this repo using MkDocs and a generated `.site-src/` tree so the Obsidian vault layout can stay intact locally.

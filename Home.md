@@ -22,6 +22,7 @@ Read these in order when a new AI model or agent joins the environment:
 8. [[Resources/Glossary]] — local names, acronyms, and project shorthand.
 9. [[Resources/Open Questions]] — uncertainty that needs Matt or live-system confirmation.
 10. [[Projects/LLM Wiki Second Brain]] — project to make this vault agent-maintained and schema-checked.
+11. [[Resources/Repo Scope]] — what belongs in this repo and what should live elsewhere.
 
 ## Main Areas
 - [[Areas/Homelab]] — servers, networking, Docker, Kubernetes, observability, AI infrastructure.

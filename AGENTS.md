@@ -121,13 +121,13 @@ Two-box model: Oracle VPS (public) → Tailscale → Home Lab (private)
 <claude-mem-context>
 # Memory Context
 
-# [em0lab_vault] recent context, 2026-05-13 9:38am EDT
+# [em0lab_vault] recent context, 2026-05-13 10:34am EDT
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 38 obs (15,017t read) | 464,292t work | 97% savings
+Stats: 49 obs (19,253t read) | 550,200t work | 97% savings
 
 ### May 2, 2026
 1 10:46a ⚖️ Homelab Second Brain Documentation Project Initiated
@@ -171,43 +171,17 @@ Stats: 38 obs (15,017t read) | 464,292t work | 97% savings
 57 " 🟣 MkDocs + GitHub Pages Publishing Pipeline Added to Vault
 58 8:40a 🔵 MkDocs Local Build Fails — docs_dir Cannot Equal Config File Directory
 S1 Expand em0lab Obsidian vault into a full homelab "second brain" with git backing, CI, and web publishing for AI model consumption (May 13 at 8:40 AM)
-**Investigated**: - Full vault structure at /Volumes/mm2ssd/mjb/Documents/obsidian/em0lab_vault surveyed: Areas, Projects, Resources, Schemas, Templates, Wiki, images, memory, Daily Notes, Sources directories
-    - AGENTS.md session history confirmed this is the 3rd iteration of this project (prior sessions May 2 and May 12, 2026 already built substantial structure)
-    - 362k tokens of prior work logged in AGENTS.md via claude-mem
-    - Smart Connections plugin active with .ajson embeddings for all notes in .smart-env/multi/
-    - Vault was previously part of the parent home dir git repo at /Volumes/mm2ssd/mjb, not independently tracked
-    - Credential scan confirmed no secrets in vault notes; all stored in 1Password and cashbox:/home/mjb/projects/cash-compose/.credentials.txt
-    - Active homelab services: obsidian.aadd.rocks (KasmVNC via Caddy), CouchDB LiveSync on cashbox:5984, Vaultwarden on Oracle VPS
-    - Active project backlog: HA per-room AI agents, Claude orchestration, matrix LED displays, Kubernetes, AI server fix (Garuda Linux GPU issue), personal website
-    - gh CLI not installed on Mac Mini
-    - Local Python is 3.9 (system); CI targets 3.12
+89 9:38a 🟣 Homelab "Second Brain" Documentation Initiative Initiated
+90 " 🔵 Obsidian Vault Has Full MkDocs + GitHub Pages Publishing Pipeline
+91 " 🔵 Vault Navigation Structure Reveals Full Second Brain Taxonomy
+92 " 🔴 Broken Wikilinks in AGENTS.md Block CI Build
+93 9:39a 🟣 Staged Source Tree Build Pattern Added to Vault CI Pipeline
+94 " 🔴 wiki_health.py Has False Positive on Documented Wikilinks in AGENTS.md
+95 " 🔵 Private Files Leaked into .site-src: Projects/Proposal and 2026 Taxes
+96 " 🔴 Added EXCLUDED_PREFIXES to build_site_source.py and wiki_health.py to Block Private Content
+97 9:40a 🔴 wiki_health.py Now Passes Clean After IGNORED_DIRS and build_site_source.py Pruning Fixes
+98 " 🔵 AGENTS.md Documents Full Session History as Learned/Completed Sections
+99 " 🟣 GitHub Pages Wiki Pipeline Shipped: Commit d5aadfb Pushed to Main
 
-**Learned**: - MkDocs does not allow docs_dir to equal the parent directory of mkdocs.yml — config must reference a child directory
-    - MkDocs also rejects site_dir inside docs_dir (infinite loop prevention)
-    - The fix path: generate a temporary .site-src/ directory from tracked markdown, then point docs_dir at that for the build
-    - Excluding a file from git (.gitignore) breaks any wikilinks pointing to it; discovered when `Home.md` still linked to `Projects/2026 Taxes.md` after that file was gitignored
-    - Projects/Proposal/Mal Engagement.md uses image wikilinks (.jpg) that break wiki_health.py unless the entire Proposal directory is path-excluded
-    - IGNORED_PATHS must use tuple prefix matching, not simple directory name matching, to exclude files two levels deep
-    - mkdocs-roamlinks-plugin emits a DeprecationWarning on MkDocs 1.2+ but is non-fatal
-    - Material for MkDocs has flagged MkDocs 2.0 as potentially breaking the plugin system entirely (noted for future awareness)
-
-**Completed**: - Created .gitignore (excludes .smart-env, .obsidian/plugins, workspace.json, images/*, Projects/Proposal/, Projects/2026 Taxes.md, all credential patterns, .site, .venv, .tmp)
-    - Created .gitattributes (LF line endings for md/json/yml/yaml/sh/py)
-    - Created README.md (agent onboarding doc identifying canonical entry points)
-    - Created scripts/wiki_health.py (frontmatter checker for Wiki/ and Schemas/ dirs, broken wikilink scanner, IGNORED_PATHS for private dirs)
-    - Added frontmatter to Projects/LLM Wiki Second Brain.md, Schemas/LLM Wiki Schema.md, Schemas/Relationship Ontology.md
-    - Fixed `Home.md` to remove the broken link to `Projects/2026 Taxes.md`
-    - wiki_health.py passes clean: 36 files checked, exit 0
-    - git init created dedicated vault repo (separate from home dir repo)
-    - git add + initial commit: "Initialize homelab second brain" — SHA cba077a, 47 files, 2095 insertions
-    - git remote added: https://github.com/mjbeatty89/aadd-homelab.git
-    - Pushed to GitHub (cba077a → main)
-    - Created .github/workflows/wiki-health.yml (CI runs wiki_health.py on every push/PR, Python 3.12, ubuntu-latest) — committed as SHA 2fd822d and pushed
-    - Created mkdocs.yml with Material theme, roamlinks plugin, full nav structure covering all vault sections
-    - Created .github/workflows/pages.yml (builds MkDocs site, runs wiki_health.py, deploys to GitHub Pages on push to main)
-
-**Next Steps**: Fixing the MkDocs docs_dir configuration error: generating a temporary .site-src/ directory populated from tracked markdown files so that mkdocs.yml can reference a proper child directory as docs_dir rather than the vault root itself. This keeps the Obsidian vault layout unchanged while satisfying MkDocs' directory requirements. After the build passes locally, the fix will be committed and pushed so the pages.yml GitHub Actions workflow can successfully deploy to https://mjbeatty89.github.io/aadd-homelab/.
-
-
-Access 464k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 550k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>

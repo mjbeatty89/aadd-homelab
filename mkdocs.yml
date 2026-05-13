@@ -10,11 +10,18 @@ site_dir: .site
 theme:
   name: material
   features:
+    - navigation.expand
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - toc.follow
     - search.highlight
+    - search.suggest
     - content.code.copy
+  palette:
+    - scheme: default
+      primary: teal
+      accent: amber
 
 plugins:
   - search
@@ -33,6 +40,9 @@ markdown_extensions:
 
 nav:
   - Home: Home.md
+  - About:
+      - Repository Guide: README.md
+      - Repo Scope: Resources/Repo Scope.md
   - Agent Context:
       - AGENTS.md
       - CLAUDE.md
@@ -45,6 +55,7 @@ nav:
       - Tailscale Snapshot: Resources/Tailscale Snapshot.md
       - Dev Workspace Map: Resources/Dev Workspace Map.md
       - Open Questions: Resources/Open Questions.md
+      - Repo Scope: Resources/Repo Scope.md
       - Glossary: Resources/Glossary.md
       - Caddy Bug Fix: Resources/Caddy Bug Fix.md
       - OpenHASP: Resources/OpenHASP.md
@@ -69,4 +80,7 @@ nav:
       - ADR: Templates/ADR.md
       - Incident: Templates/Incident.md
       - Source Capture: Templates/Source Capture.md
+  - Reference:
+      - Vault Home Redirect: images/Home.md
+      - Memory Glossary: memory/glossary.md
   - Tasks: TASKS.md
