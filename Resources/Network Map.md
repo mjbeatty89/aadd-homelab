@@ -42,6 +42,7 @@ Local Network (UniFi)
 ## Homelab Hosts
 | Host | IP | Role | SSH alias |
 |------|----|------|-----------|
+| cashbox | 10.1.30.8 (`enp14s0`, mgmt) · 10.1.30.84 (`enp15s0`, containers) | Container server, MCP gateway, observability | — |
 | HA Pi5 | 10.1.30.10 | Home Assistant | `ha` |
 | CANTY VCM | 10.1.30.14 | Proxmox Backup + Tailscale bridge | `local-vcm` |
 | unRAID | 10.1.30.16 | Storage, Nextcloud, AgentGPT, Bambu | `winserv` area |
@@ -90,6 +91,7 @@ Local Network (UniFi)
 | Host and service docs | [[Resources/Host Inventory]] · [[Resources/Service Catalog]] |
 
 ## Known Issues / TODO
+- [ ] **cashbox macvlan Docker network** — configure Docker macvlan on `enp15s0` (`10.1.30.84`); get DHCP reservation for that IP first; note host↔container comms require a macvlan shim interface on host side
 - [ ] **Caddyfile has syntax errors** — see [[Resources/Caddy Bug Fix]]
 - [ ] `ai.aadd.rocks` target needs refresh for AI server at `10.1.30.9`
 - [ ] Services not yet configured: nextcloud, photoprism, adguard, lldap, komodo, syncth, diyhue

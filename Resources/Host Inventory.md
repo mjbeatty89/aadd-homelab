@@ -12,7 +12,7 @@
 
 | Host | Addresses | Role | Source of Truth | Notes |
 |------|-----------|------|-----------------|-------|
-| `cashbox` / `cash-containers` | Tailscale `100.68.19.83`; LAN `10.1.30.8`; MagicDNS `cash.manee-frog.ts.net` | CachyOS container server, observability/data services, Obsidian LiveSync, MCP gateway | `/home/mjb/projects/cash-compose`; GitHub `mjbeatty89/cash-compose` | Ryzen 5 7600X, 32GB RAM, 500GB NVMe. |
+| `cashbox` / `cash-containers` | Tailscale `100.68.19.83`; LAN `10.1.30.8` (`enp14s0`, management); LAN `10.1.30.84` (`enp15s0`, container NIC — macvlan planned); MagicDNS `cash.manee-frog.ts.net` | CachyOS container server, observability/data services, Obsidian LiveSync, MCP gateway | `/home/mjb/projects/cash-compose`; GitHub `mjbeatty89/cash-compose` | Ryzen 5 7600X, 32GB RAM, 500GB NVMe. Dual RTL8125 2.5GbE NICs. `enp15s0` reserved for Docker macvlan — containers get direct LAN IPs, no NAT. DHCP reservation needed for `10.1.30.84` before macvlan setup. |
 | CANTY VCM / `local-vcm` / `deb-vcm` | LAN `10.1.30.14`; Tailscale `100.83.134.110`; MagicDNS `vcm.manee-frog.ts.net` | Intended Tailscale subnet router, Proxmox Backup Server, 10-port PoE mini-PC | Source of truth to establish | Tagged as Tailscale gateway; also exposes `pbs.aadd.rocks` and `pve-vcm.aadd.rocks`. |
 | Proxmox VE | LAN `10.1.30.27` | VM host | Source of truth to establish | Planned host for rental Home Assistant VM. |
 | TrueNAS / `truenas-scale` | LAN `10.1.31.70`; Tailscale `100.99.131.90`; MagicDNS `nas.manee-frog.ts.net` | NAS and Time Machine target | TBD | SMB Time Machine share on ZFS pool. |
