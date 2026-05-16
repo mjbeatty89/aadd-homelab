@@ -1,6 +1,6 @@
 ---
 type: decision
-status: draft
+status: proposed
 owner: matt
 created: 2026-05-16
 updated: 2026-05-16
@@ -57,7 +57,7 @@ Assign each host a primary architectural role and route workloads accordingly.
 | Use Case | Protocol | Notes |
 |----------|----------|-------|
 | Media files | NFS | Shared read/write, good enough for sequential media |
-| Databases needing block storage | iSCSI | Block-level access, proper locking |
+| Databases (unRAID) needing block storage | iSCSI | Block-level access and proper locking; cashbox databases remain co-located and do not use TrueNAS |
 | macOS Time Machine | SMB (AFP-style) | Already configured on TrueNAS |
 | Nextcloud / Paperless data | NFS or SMB | Hosted on unRAID, data can optionally back to TrueNAS |
 
@@ -74,7 +74,7 @@ Assign each host a primary architectural role and route workloads accordingly.
 - NFS introduces a network dependency for all media and app data; a TrueNAS blip pauses unRAID apps.
 - iSCSI volume management on TrueNAS adds operational complexity (zvols, initiator config).
 - Two-host media setup (TrueNAS + unRAID) means two systems to maintain instead of one.
-- unRAID's storage/parity model is weaker than ZFS — auxiliary data on unRAID has less integrity protection.
+- unRAID's traditional array parity model is weaker than ZFS — auxiliary data on the main array has less integrity protection. (unRAID 6.12+ supports native ZFS pools, but app containers don't automatically land there.)
 
 ## Alternatives Considered
 
